@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        
+    /*
+    When you input a value (whether String, int, double, etc) and hit 'enter,'      a new-line character ('\n') will be appended to the end of your input.
+     So, if you're entering an int, sc.nextInt() will only read the integer entered and leave the '\n' behind in the buffer. 
+     So, the way to fix this is to add a sc.nextLine() that will read the leftover and throw it away. 
+     
+     Except nextChar(), we have all. nextBoolean(), nextByte();
+     when we call this method, it pauses and waits for the user to enter a value and the entered value will be returnedby these methods
+    */
+      
+        
+        int i = scan.nextInt();
+        Double d = scan.nextDouble();
+        scan.nextLine();
+        String s = scan.nextLine();
+        
+        //obj.next() will not read after space. if "first name" is given, onlt first will be printed.We can't read fullsentence with spaces
+        //to avoid this we use obj.nextLine(); 
+
+        System.out.println("String: " + s);
+        System.out.println("Double: " + d);
+        System.out.println("Int: " + i);
+    }
+}
